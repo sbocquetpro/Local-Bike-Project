@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: stg_Sales__order_items
+    description: "Les éléments de commande avec la combinaison order_id et item_id comme clé primaire."
+    columns:
+      - name: order_items_id
+        description: "Clé primaire unique composée de order_id et item_id."
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: "L'ID de la commande associée."
+        tests:
+          - not_null
+      - name: item_id
+        description: "L'ID de l'élément de la commande."
+        tests:
+          - not_null
+      - name: product_id
+        description: "L'ID du produit associé à l'élément de la commande."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_Production__products')
+              field: product_id
+      - name: item_quantity
+        description: "Quantité d'articles commandés pour cet élément de commande."
+        tests:
+          - not_null
+      - name: item_price
+        description: "Prix unitaire de l'élément de commande."
+        tests:
+          - not_null
+      - name: discount
+        description: "Remise appliquée sur l'élément de commande."
+        tests:
+          - not_null

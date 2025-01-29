@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_Production__categories
+    description: "Les catégories de produits, avec une clé primaire basée sur category_id."
+    columns:
+      - name: category_id
+        description: "Clé primaire unique pour chaque catégorie de produit."
+        tests:
+          - unique
+          - not_null
+      - name: category_name
+        description: "Nom de la catégorie de produit."
+        tests:
+          - not_null

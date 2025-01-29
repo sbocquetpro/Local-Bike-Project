@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: stg_Sales__stores
+    description: "Détails des magasins de la société."
+    columns:
+      - name: store_id
+        description: "Identifiant unique du magasin."
+        tests:
+          - unique
+          - not_null
+
+      - name: store_name
+        description: "Nom du magasin."
+        tests:
+          - not_null
+      - name: phone_number
+        description: "Numéro de téléphone du magasin."
+        tests:
+          - not_null
+      - name: email
+        description: "Adresse email du magasin."
+        tests:
+          - not_null
+      - name: street_address
+        description: "Adresse du magasin."
+        tests:
+          - not_null
+      - name: city
+        description: "Ville où le magasin est situé."
+        tests:
+          - not_null
+      - name: state
+        description: "État où le magasin est situé."
+        tests:
+          - not_null
+      - name: zip_code
+        description: "Code postal du magasin."
+        tests:
+          - not_null

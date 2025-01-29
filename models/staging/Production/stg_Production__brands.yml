@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_Production__brands
+    description: "Les marques de produits, avec une clé primaire basée sur brand_id."
+    columns:
+      - name: brand_id
+        description: "Clé primaire unique pour chaque marque de produit."
+        tests:
+          - unique
+          - not_null
+      - name: brand_name
+        description: "Nom de la marque de produit."
+        tests:
+          - not_null
