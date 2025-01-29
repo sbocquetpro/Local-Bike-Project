@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: stg_Sales__staffs
+    description: "Détails des employés du magasin."
+    columns:
+      - name: staff_id
+        description: "Identifiant unique de l'employé."
+        tests:
+          - unique
+          - not_null
+
+      - name: first_name
+        description: "Prénom de l'employé."
+        tests:
+          - not_null
+      - name: last_name
+        description: "Nom de famille de l'employé."
+        tests:
+          - not_null
+      - name: email
+        description: "Adresse email de l'employé."
+        tests:
+          - not_null
+          - unique
+      - name: phone_number
+        description: "Numéro de téléphone de l'employé."
+        tests:
+          - not_null
+      - name: store_id
+        description: "Identifiant du magasin où l'employé travaille."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_Sales__stores')  
+              field: store_id
+      - name: manager_id
+        description: "Identifiant du manager de l'employé."
+        tests:
+          - not_null

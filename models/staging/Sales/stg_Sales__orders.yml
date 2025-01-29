@@ -1,0 +1,57 @@
+version: 2
+
+models:
+  - name: stg_Sales__orders
+    description: "Ce modèle contient les détails des commandes, y compris les informations sur les clients, le personnel, les magasins, le statut de la commande et les informations d'expédition."
+    columns:
+      - name: order_id
+        description: "L'identifiant unique pour chaque commande."
+        tests:
+          - unique  
+          - not_null 
+
+      - name: customer_id
+        description: "L'identifiant unique pour chaque client."
+        tests:
+          - not_null  
+          - relationships:
+              to: ref('stg_Sales__customers')  
+              field: customer_id  
+
+      - name: store_id
+        description: "L'identifiant du magasin où la commande a été passée."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_Sales__stores')  
+              field: store_id  
+
+      - name: staff_id
+        description: "L'identifiant du membre du personnel qui a traité la commande."
+        tests:
+          - not_null  
+          - relationships:
+              to: ref('stg_Sales__staffs')  
+              field: staff_id
+
+      - name: order_status
+        description: "Le statut actuel de la commande"
+        tests:
+          - not_null
+
+      - name: ordered_at
+        description: "La date et l'heure à laquelle la commande a été passée."
+        tests:
+          - not_null  
+
+      - name: required_at
+        description: "La date limite à laquelle la commande doit être effectuée."
+        tests:
+          - not_null  
+
+      - name: shipped_at
+        description: "La date et l'heure auxquelles la commande a été expédiée. Les valeurs NULL indiquent que la commande n'a pas encore été expédiée ou manque de data" 
+
+      - name: processing_time
+        description: "Le temps (en jours) écoulé entre la commande et l'expédition."
+

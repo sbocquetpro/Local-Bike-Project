@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: stg_Production__stocks
+    description: "Les stocks de produits disponibles dans chaque magasin, avec une clé primaire générée par la concaténation de store_id et product_id."
+    columns:
+      - name: stock_id
+        description: "Clé primaire unique générée par la concaténation de store_id et product_id."
+        tests:
+          - unique
+          - not_null
+      - name: store_id
+        description: "L'ID du magasin."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_Production__stores')
+              field: store_id
+      - name: product_id
+        description: "L'ID du produit."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_Production__products')
+              field: product_id
+      - name: product_quantity
+        description: "La quantité de produits disponibles dans le magasin."
+        tests:
+          - not_null

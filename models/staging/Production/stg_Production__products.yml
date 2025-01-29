@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: stg_Production__products
+    description: "Les informations sur les produits."
+    columns:
+      - name: product_id
+        description: "L'ID unique du produit."
+        tests:
+          - unique
+          - not_null
+      - name: product_name
+        description: "Le nom du produit."
+        tests:
+          - not_null
+      - name: brand_id
+        description: "L'ID de la marque du produit."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_Production__brands')
+              field: brand_id
+      - name: category_id
+        description: "L'ID de la catégorie du produit."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_Production__categories')
+              field: category_id
+      - name: model_year
+        description: "L'année modèle du produit."
+        tests:
+          - not_null
+      - name: product_price
+        description: "Le prix unitaire du produit."
+        tests:
+          - not_null

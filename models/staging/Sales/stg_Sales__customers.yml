@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: stg_Sales__customers
+    description: "Table des clients"
+    columns:
+      - name: customer_id
+        description: "Identifiant unique du client"
+        tests:
+          - unique
+          - not_null
+      - name: first_name
+        description: "Prénom du client"
+        tests:
+          - not_null
+      - name: last_name
+        description: "Nom de famille du client"
+        tests:
+          - not_null
+      - name: phone_number
+        description: "Numéro de téléphone du client"
+        tests:
+          - not_null
+      - name: email
+        description: "Email du client"
+        tests:
+          - not_null
+      - name: street_adress
+        description: "Adresse de rue du client"
+        tests:
+          - not_null
+      - name: city
+        description: "Ville du client"
+        tests:
+          - not_null
+      - name: state
+        description: "État ou province du client"
+        tests:
+          - not_null
+      - name: zip_code
+        description: "Code postal du client"
+        tests:
+          - not_null
+
