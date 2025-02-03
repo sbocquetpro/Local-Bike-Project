@@ -9,7 +9,7 @@ WITH store_sales AS (
         oi.item_quantity,
         oi.item_price,
         oi.discount,
-        ROUND((oi.item_price * oi.item_quantity - oi.discount* oi.item_price * oi.item_quantity),2) AS total_sales,
+        ROUND(oi.item_price * oi.item_quantity *(1 - oi.discount),2) AS total_sales,
         o.ordered_at
     FROM {{ ref('stg_Sales__orders') }} o
     JOIN {{ ref('stg_Sales__order_items') }} oi ON o.order_id = oi.order_id
