@@ -1,0 +1,74 @@
+version: 2
+
+models:
+  - name: int_customer_sales
+    description: "Table intermédiaire contenant les ventes détaillées par client, en ajoutant les informations clients aux ventes."
+    columns:
+      - name: store_id
+        description: "Identifiant unique du magasin."
+        tests:
+          - not_null
+
+      - name: store_name
+        description: "Nom du magasin."
+
+      - name: customer_id
+        description: "Identifiant unique du client."
+        tests:
+          - not_null
+
+      - name: first_name
+        description: "Prénom du client."
+
+      - name: last_name
+        description: "Nom de famille du client."
+
+      - name: email
+        description: "Adresse e-mail du client."
+
+      - name: city
+        description: "Ville du client."
+
+      - name: state
+        description: "État du client."
+
+      - name: zip_code
+        description: "Code postal du client."
+
+      - name: product_id
+        description: "Identifiant unique du produit vendu."
+        tests:
+          - not_null
+
+      - name: product_name
+        description: "Nom du produit vendu."
+
+      - name: category_name
+        description: "Nom de la catégorie du produit."
+        tests:
+          - not_null
+
+      - name: item_quantity
+        description: "Quantité de produits vendus."
+        tests:
+          - not_null
+
+      - name: item_price
+        description: "Prix unitaire du produit."
+        tests:
+          - not_null
+
+      - name: discount
+        description: "Remise appliquée sur la commande."
+        tests:
+          - not_null
+
+      - name: total_sales
+        description: "Montant total des ventes après remise."
+        tests:
+          - not_null
+
+      - name: ordered_at
+        description: "Date de la commande."
+        tests:
+          - not_null

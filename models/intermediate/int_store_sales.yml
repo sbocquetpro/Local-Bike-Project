@@ -1,0 +1,60 @@
+version: 2
+
+models:
+  - name: int_store_sales
+    description: "Table intermédiaire contenant les ventes détaillées par produit et magasin."
+    columns:
+      - name: store_id
+        description: "Identifiant unique du magasin."
+        tests:
+          - not_null
+
+      - name: store_name
+        description: "Nom du magasin."
+        tests:
+          - not_null
+
+      - name: customer_id
+        description: "Identifiant unique du client."
+        tests:
+          - not_null
+
+      - name: product_id
+        description: "Identifiant unique du produit vendu."
+        tests:
+          - not_null
+
+      - name: product_name
+        description: "Nom du produit vendu."
+        tests:
+          - not_null
+
+      - name: category_name
+        description: "Nom de la catégorie du produit."
+        tests:
+          - not_null
+
+      - name: item_quantity
+        description: "Quantité de produits vendus."
+        tests:
+          - not_null
+
+      - name: item_price
+        description: "Prix unitaire du produit."
+        tests:
+          - not_null
+
+      - name: discount
+        description: "Remise appliquée sur la commande."
+        tests:
+          - not_null
+
+      - name: total_sales
+        description: "Montant total des ventes après remise."
+        tests:
+          - not_null
+
+      - name: ordered_at
+        description: "Date de la commande."
+        tests:
+          - not_null

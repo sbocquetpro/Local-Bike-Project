@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: store_sales_by_month
+    description: "Table MART regroupant les ventes des magasins par mois et par type de produit."
+    columns:
+      - name: store_id
+        description: "Identifiant unique du magasin."
+        tests:
+          - not_null
+
+      - name: store_name
+        description: "Nom du magasin."
+
+      - name: year_month
+        description: "Mois et année de la vente (YYYY-MM)."
+        tests:
+          - not_null
+
+      - name: category_name
+        description: "Nom de la catégorie de produit."
+        tests:
+          - not_null
+
+      - name: total_sales
+        description: "Montant total des ventes pour le magasin et la catégorie."
+        tests:
+          - not_null
