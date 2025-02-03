@@ -1,0 +1,55 @@
+version: 2
+
+models:
+  - name: int_customer_behaviors
+    description: "Table d'analyse du comportement client : total commandes, produit préféré, dernier achat et statut actif/inactif."
+    
+    columns:
+      - name: customer_id
+        description: "Identifiant unique du client."
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_name
+        description: "Nom complet du client."
+        tests:
+          - not_null
+
+      - name: email
+        description: "Email du client."
+
+      - name: city
+        description: "Ville du client."
+
+      - name: state
+        description: "État du client."
+
+      - name: zip_code
+        description: "Code postal du client."
+
+      - name: total_orders
+        description: "Nombre total de commandes passées par le client."
+        tests:
+          - not_null
+
+      - name: total_revenue
+        description: "Montant total dépensé par le client."
+        tests:
+          - not_null
+
+      - name: last_order_date
+        description: "Date de la dernière commande du client."
+        tests:
+          - not_null
+
+      - name: is_active
+        description: "Boolean indiquant si le client est actif (TRUE = actif, FALSE = inactif depuis +6 mois)."
+        tests:
+          - not_null
+
+      - name: favorite_product_id
+        description: "Identifiant du produit préféré du client."
+
+      - name: favorite_product_name
+        description: "Nom du produit préféré du client."

@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: mart_product_stock_per_store
+    description: "Table de suivi des stocks par produit et magasin, avec indicateur de stock."
+    
+    columns:
+      - name: store_id
+        description: "Identifiant unique du magasin."
+        tests:
+          - not_null  
+
+      - name: store_name
+        description: "Nom du magasin."
+        tests:
+          - not_null
+
+      - name: product_id
+        description: "Identifiant unique du produit."
+        tests:
+          - not_null
+
+      - name: product_name
+        description: "Nom du produit."
+        tests:
+          - not_null
+
+      - name: stock_status
+        description: "Indicateur de l'état du stock (EN STOCK, STOCK FAIBLE, RUPTURE)."
+        tests:
+          - accepted_values:
+              values: ['EN STOCK', 'STOCK FAIBLE', 'RUPTURE'] 
