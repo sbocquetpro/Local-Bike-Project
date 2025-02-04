@@ -13,7 +13,12 @@ WITH customer_orders AS (
         -- Chiffre d'affaires total généré par le client
         SUM(cs.total_sales) AS total_revenue, 
         -- Date de la dernière commande passée
-        MAX(cs.ordered_at) AS last_order_date  
+        MAX(cs.ordered_at) AS last_order_date,
+         CASE 
+            WHEN MAX(cs.ordered_at) >= DATE_SUB(CURRENT_DATE(), INTERVAL 1 YEAR) 
+            THEN 'Yes' 
+            ELSE 'No' 
+        END AS is_active
     FROM {{ ref('int_customer_sales') }} cs  
     GROUP BY cs.customer_id, cs.first_name, cs.last_name, cs.email, cs.city, cs.state, cs.zip_code
 ),
