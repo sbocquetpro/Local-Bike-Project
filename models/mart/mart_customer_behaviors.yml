@@ -44,7 +44,7 @@ models:
           - not_null
 
       - name: is_active
-        description: "Boolean indiquant si le client est actif (TRUE = actif, FALSE = inactif depuis +6 mois)."
+        description: "indiquant si le client est actif (yes = actif, no = inactif depuis +1 an)."
         tests:
           - not_null
 
