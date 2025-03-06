@@ -35,4 +35,12 @@ Ce projet a été réalisé dans le cadre de ma formation chez **Data Bird**. L'
 - Conception de modèles de données adaptés aux besoins variés des utilisateurs finaux.
 
 
+## Dashboards
+![Dashboard](https://github.com/sbocquetpro/Local-Bike-Project/blob/main/Dashboard_LocalBike_1.png)
+
+![Dashboard](https://github.com/sbocquetpro/Local-Bike-Project/blob/main/Dashboard_LocalBike_2.png)
+
+![Dashboard](https://github.com/sbocquetpro/Local-Bike-Project/blob/main/Dashboard_LocalBike_3.png)
+
+
 
